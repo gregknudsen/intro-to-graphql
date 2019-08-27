@@ -37,9 +37,15 @@ input NewProductInput {
 input UpdateProductInput {
   name: String
   image: String
-  # type: ProductType
-  # description: String
-  # liquidCooled: Boolean
-  # bikeType: BikeType
-  # range: String
+}
+
+extend type Query {
+  products: [Product]!
+  product(id: ID!): Product!
+}
+
+extend type Mutation {
+  newProduct(input: NewProductInput!): Product!
+  updateProduct(id: ID!, input: UpdateProductInput!): Product!
+  removeProduct(id: ID!): Product!
 }
