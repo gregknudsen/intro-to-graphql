@@ -9,10 +9,17 @@ const productsTypeMatcher = {
   DRONE: 'Drone'
 }
 
+const products = () => {
+  return Product.find({}).exec()
+}
+
 export default {
-  Query: {},
+  Query: {
+    products
+  },
   Mutation: {},
   Product: {
-    __resolveType(product) {}
+    __resolveType(product) {},
+    // createdBy(product)
   }
 }
