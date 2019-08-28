@@ -117,7 +117,7 @@ describe('Resolvers', () => {
       expect(`${result._id}`).toBe(`${product._id}`)
     })
 
-    test('product created by gets resolves', async () => {
+    test('product created by gets resolved', async () => {
       const user = await User.create({
         email: 'yo@yo.com',
         password: 'asdfsd',
